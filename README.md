@@ -51,7 +51,7 @@ Preview Production Build: "npm run preview"
 
 🧠 AI Tools Used
 Cursor AI: Used for enhanced developer experience and faster code generation, refactoring, and AI-assisted debugging.
-Project IDX (from Google) : same as th Cursor AI but free to use. It simply made my code even better using their generative ai and much easy to debug the error
+Project IDX (from Google) : same as the Cursor AI but free to use. It simply made my code even better using their generative ai and much easy to debug the error
 
 
 
