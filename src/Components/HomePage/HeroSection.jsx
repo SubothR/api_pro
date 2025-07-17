@@ -65,7 +65,7 @@ export default function HeroSection() {
             className="w-[80%] mx-auto mt-4 bg-gradient-to-b from-[#da3cc5] to-[#6b7ede] 
                        hover:from-[#da3cc555] text-white font-bold text-xl 
                        shadow-2xl shadow-black py-3 rounded-xl focus:outline-none 
-                       focus:ring-4 focus:ring-pink-500 focus:ring-opacity-60"
+                       focus:ring-4 focus:ring-pink-500 focus:ring-opacity-60 cursor-pointer"
             whileHover={{
               scale: 1.05,
               transition: { type: "spring", stiffness: 300 },

@@ -10,9 +10,11 @@
 
 Clone the repository and install dependencies:
 
-```bash
-git clone https://github.com/SubothR/api-pro.git
+
+git clone https://github.com/SubothR/api_pro.git
+
 cd api-pro
+
 npm install
 
 

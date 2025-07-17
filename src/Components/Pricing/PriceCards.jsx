@@ -88,7 +88,7 @@ export default function PricingCards() {
             key={plan.name}
             variants={cardVariants}
             whileHover="hover"
-            className={`relative p-6 w-[100%] rounded-3xl shadow-xl border transition-transform duration-300 focus-within:scale-[1.03] cursor-pointer
+            className={`relative p-6 w-[100%] rounded-3xl shadow-xl border transition-transform duration-300 focus-within:scale-[1.03] 
               ${
                 plan.highlight
                   ? "bg-gradient-to-b from-purple-600 to-purple-800 text-white border-none"
@@ -120,7 +120,7 @@ export default function PricingCards() {
 
             <button
               type="button"
-              className={`w-full py-3 rounded-xl font-semibold transition-colors duration-200 focus:outline-none focus:ring-4 focus:ring-offset-2 focus:ring-purple-400 ${
+              className={`w-full py-3 cursor-pointer rounded-xl font-semibold transition-colors duration-200 focus:outline-none focus:ring-4 focus:ring-offset-2 focus:ring-purple-400 ${
                 plan.highlight
                   ? "bg-black text-purple-400 hover:bg-gray-900"
                   : "bg-purple-600 text-white hover:bg-purple-700"
