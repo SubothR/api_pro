@@ -1,58 +1,8 @@
-# 🚀 API PRO
-
-**API PRO** is a modern, animated landing page built with **React + Vite**, styled using **Tailwind CSS**, animated with **Framer Motion**, and enhanced with **PWA** capabilities for offline use and installability.
-
----
-
-## 📦 Getting Started
-
-### 🛠️ Installation
-
-Clone the repository and install dependencies:
-
-
-git clone https://github.com/SubothR/api_pro.git
-
-cd api-pro
-
-npm install
-
-
-Start the development server: "npm run dev"
-
-
-To preview the app on your mobile device on the same Wi-Fi network: "npm run dev -- --host"
-
-
-Build for Production : "npm run build"
-
-
-Preview Production Build: "npm run preview"
-
-
- Features
- React + Vite for fast and modern development.
-
- Tailwind CSS for sleek and responsive UI.
-
- Framer Motion for smooth animations and transitions.
-
- React Router for client-side routing.
-
- PWA Support for installability and offline access.
-
- Animated Loading Screen using a custom GIF.
-
- Fully Responsive Design for desktop and mobile.
-
- Cyberpunk Themed purple neon ui 
-
- React Router Dom for Seemless Routing 
-
-
-
-AI Tools Used
-Cursor AI: Used for enhanced developer experience and faster code generation, refactoring, and AI-assisted debugging.
-Project IDX (from Google) : same as the Cursor AI but free to use. It simply made my code even better using their generative ai and much easy to debug the error
-
-```
+🚀 API PROAPI PRO is a modern, animated landing page designed to showcase a powerful API platform. Built with React and Vite, it features a sleek, responsive UI styled with Tailwind CSS and dynamic animations powered by Framer Motion. This project is also designed with PWA capabilities in mind, offering offline use and installability.✨ FeaturesReact + Vite: Leveraging the speed and efficiency of Vite for a fast and modern development experience.Tailwind CSS: For a utility-first approach to styling, ensuring a sleek and fully responsive user interface.Framer Motion: Implements smooth, engaging animations and transitions throughout the application.Simulated Client-Side Routing: Seamless navigation between sections (Home, Features, About, Contact) without full page reloads.PWA Support (Planned): Designed to be installable and offer offline access for an enhanced user experience.Animated Loading Screen: A custom loading screen with a placeholder GIF and engaging animations.Fully Responsive Design: Optimized for optimal viewing and interaction across all devices, from desktop to mobile.Cyberpunk Themed UI: A distinct visual style featuring dark backgrounds, purple neon accents, and glowing text effects.📦 Getting StartedFollow these steps to get API PRO up and running on your local machine.🛠️ InstallationClone the repository:git clone https://github.com/SubothR/api_pro.git
+Navigate into the project directory:cd api-pro
+Install dependencies:npm install
+🚀 Development ServerTo start the development server and view the application in your browser:npm run dev
+To preview the app on your mobile device on the same Wi-Fi network:npm run dev -- --host
+📦 Production BuildTo build the application for production deployment:npm run build
+🌐 Preview Production BuildTo preview the optimized production build locally:npm run preview
+🤖 AI Tools UsedThis project benefited from the assistance of several AI-powered development tools:Cursor AI: Utilized for an enhanced developer experience, facilitating faster code generation, intelligent refactoring, and AI-assisted debugging.Project IDX (from Google): Provided similar capabilities to Cursor AI, offering generative AI features for code improvement and streamlined error debugging.📄 LicenseThis project is open-source and available under the MIT License.
