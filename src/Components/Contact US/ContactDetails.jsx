@@ -43,7 +43,7 @@ export default function ContactDetails() {
       {contactItems.map((item, i) => (
         <motion.div
           key={item.title}
-          className="bg-[#00000088] p-5 rounded-xl flex flex-col sm:flex-row sm:items-center sm:gap-4 flex-1"
+          className="bg-[#00000088] p-5 rounded-xl gap-3 flex flex-col sm:flex-row sm:items-center sm:gap-4 flex-1"
           initial="hidden"
           animate="visible"
           custom={i}
