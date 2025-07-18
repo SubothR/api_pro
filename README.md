@@ -30,7 +30,7 @@ Follow these steps to get API PRO up and running on your local machine.
 
 2.  **Navigate into the project directory:**
     ```bash
-    cd api-pro
+    cd api_pro
     ```
 
 3.  **Install dependencies:**
