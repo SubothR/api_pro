@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import toast from 'react-hot-toast';  
 
 const links = [
   { category: "GETTING STARTED", items: [{ name: "Authentication" }] },
@@ -19,7 +20,17 @@ export default function ApiDocumentation() {
 
   const copyToClipboard = (text) => {
     navigator.clipboard.writeText(text).then(() => {
-      alert("Copied to clipboard!");
+      toast.success('Copied to clipboard', {
+        style: {
+          background:  "linear-gradient(6deg, #000428 0%, #004e92 100%)", 
+          border:2,
+          borderColor:"#fff",
+          color: '#fff',
+          fontWeight:"bold"         
+        },
+      });
+     
+      
     });
   };
 
@@ -132,7 +143,7 @@ export default function ApiDocumentation() {
                     <motion.button
                       whileTap={{ scale: 0.97 }}
                       onClick={() => setActiveTab(item.name)}
-                      className={`block w-full text-left px-3 py-1 rounded-md font-semibold ${
+                      className={`block w-full text-left px-3 py-1 rounded-md font-semibold cursor-pointer ${
                         activeTab === item.name
                           ? "bg-blue-600 text-white"
                           : "text-blue-600 hover:underline"
@@ -170,7 +181,7 @@ export default function ApiDocumentation() {
                   <motion.button
                     whileTap={{ scale: 0.95 }}
                     onClick={() => copyToClipboard(tabData.request)}
-                    className="text-sm bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700"
+                    className="text-sm bg-blue-600 text-white px-3 py-1 cursor-pointer rounded hover:bg-blue-700"
                   >
                     Copy
                   </motion.button>
@@ -187,7 +198,7 @@ export default function ApiDocumentation() {
                   <motion.button
                     whileTap={{ scale: 0.95 }}
                     onClick={() => copyToClipboard(tabData.response)}
-                    className="text-sm bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700"
+                    className="text-sm bg-blue-600 text-white px-3 py-1 cursor-pointer rounded hover:bg-blue-700"
                   >
                     Copy
                   </motion.button>
@@ -201,7 +212,7 @@ export default function ApiDocumentation() {
         </AnimatePresence>
       </main>
 
-      {/* Mobile Dropdown (fixed) */}
+      
       <motion.div
         initial={{ y: 50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}

@@ -10,6 +10,8 @@ import LoadingScreen from "./Components/LoadingScreen";
 import { useEffect, useState } from "react";
 import Footer from "./Components/Footer";
 import ScrollToTop from "./Components/ScrollTop";
+import NotFound from "./Pages/not_found";
+import { Toaster } from "react-hot-toast";
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -57,6 +59,15 @@ function AnimatedRoutes() {
             </PageWrapper>
           }
         />
+
+        <Route
+          path="*"
+          element={
+            <PageWrapper>
+              <NotFound />
+            </PageWrapper>
+          }
+        />
       </Routes>
     </AnimatePresence>
   );
@@ -91,6 +102,18 @@ function App() {
     <BrowserRouter>
       <ScrollToTop />
       <NavBar />
+      <Toaster
+        position="top-center"
+        toastOptions={{
+          style: {
+            background: "#2563eb",
+            color: "#fff",
+            fontSize: "0.875rem",
+            padding: "12px 16px",
+            maxWidth: "90%", 
+          },
+        }}
+      />
       <AnimatedRoutes />
       <Footer />
     </BrowserRouter>
