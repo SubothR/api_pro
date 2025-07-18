@@ -59,7 +59,7 @@ const NavBar = () => {
       >
         <div className="bg-[#00000080] backdrop-blur-xl rounded-2xl shadow-2xl">
           <div className="flex items-center justify-between px-6 py-3">
-            {/* Logo */}
+          
             <Link to="/" className="flex items-center gap-2">
               <motion.img
                 src={Logo}
@@ -70,7 +70,7 @@ const NavBar = () => {
               />
             </Link>
 
-            {/* Desktop Menu */}
+            
             <div className="hidden lg:flex items-center gap-8">
               {menuLinks.map((link, i) => (
                 <motion.div
@@ -104,13 +104,14 @@ const NavBar = () => {
               </Link>
             </div>
 
-            {/* Mobile Toggle */}
-            <div className="lg:hidden">
+            
+            <div className="lg:hidden cursor-pointer">
               <motion.button
                 onClick={() => setMenuOpen(!menuOpen)}
                 whileTap={{ scale: 0.9 }}
+                className=" cursor-pointer"
               >
-                {menuOpen ? <X size={30} /> : <Menu size={30} />}
+                {menuOpen ? <X size={30} className=" cursor-pointer" /> : <Menu size={30} className=" cursor-pointer"/>}
               </motion.button>
             </div>
           </div>
@@ -155,19 +156,24 @@ const NavBar = () => {
               </motion.div>
             ))}
 
-            <motion.button
-              className="mt-6 w-[80%] py-3 text-lg font-bold text-white rounded-2xl shadow-xl"
+            <Link
+              to="/pricing"
+              className="w-[80%] mt-6 cursor-pointer py-3 text-lg font-bold text-white rounded-2xl shadow-xl"
+              onClick={() => setMenuOpen(false)}
               style={{
-                background: "linear-gradient(to right, #a855f7, #ec4899)",
-                border: "none",
-              }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+                  background: "linear-gradient(to right, #a855f7, #ec4899)",
+                  border: "none",
+                }}
             >
-              <Link to="/pricing" onClick={() => setMenuOpen(false)}>
+              <motion.button
+                className=" w-[100%] cursor-pointer text-lg font-bold text-white rounded-2xl "
+
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
                 Pricing
-              </Link>
-            </motion.button>
+              </motion.button>
+            </Link>
           </motion.div>
         )}
       </AnimatePresence>

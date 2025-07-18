@@ -9,18 +9,36 @@ export default function ContactForm() {
     message: "",
   });
 
+  // Parent container variants to stagger children animation
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  };
+
+  // Each input fades & slides up with a bit of scale pop
   const fadeUp = {
-    hidden: { opacity: 0, y: 40 },
-    visible: (i) => ({
+    hidden: { opacity: 0, y: 40, scale: 0.95 },
+    visible: {
       opacity: 1,
       y: 0,
-      transition: { delay: i * 0.2, type: "spring", stiffness: 60 },
-    }),
+      scale: 1,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+        type: "spring",
+        stiffness: 70,
+        damping: 12,
+      },
+    },
   };
 
   const inputGroupStyle = "relative w-full";
   const inputStyle =
-    "peer w-full p-3 pt-5 bg-[#252525] border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900";
+    "peer w-full p-3 pt-5 bg-[#252525] border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900 placeholder-transparent";
   const labelStyle =
     "absolute left-3 top-3 text-sm text-gray-500 transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:top-2 peer-focus:text-sm peer-focus:text-blue-500";
 
@@ -33,7 +51,7 @@ export default function ContactForm() {
   return (
     <div
       id="contactform"
-      className="w-full min-h-screen flex items-center justify-center px-4 py-12"
+      className="w-full min-h-screen flex items-center justify-center px-4 py-12 overflow-x-hidden"
       style={{
         background: "linear-gradient(180deg, #000428 20%, transparent 80%)",
       }}
@@ -41,17 +59,22 @@ export default function ContactForm() {
       <motion.div
         className="w-full max-w-lg sm:max-w-xl md:max-w-3xl p-3 md:p-12"
         initial="hidden"
-        animate="visible"
-        variants={{
-          hidden: { opacity: 0, y: -30 },
-          visible: { opacity: 1, y: 20, transition: { duration: 0.5 } },
-        }}
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={containerVariants}
       >
-        <h2 className="text-3xl sm:text-4xl font-bold mb-8 text-center text-gray-900">
+        <motion.h2
+          className="text-3xl sm:text-4xl font-bold mb-8 text-center text-gray-900"
+          variants={fadeUp}
+        >
           Contact Us
-        </h2>
+        </motion.h2>
 
-        <form className="space-y-6" onSubmit={handleSubmit}>
+        <motion.form
+          className="space-y-6"
+          onSubmit={handleSubmit}
+          variants={containerVariants}
+        >
           {[
             {
               label: "Full Name",
@@ -69,9 +92,6 @@ export default function ContactForm() {
           ].map((field, i) => (
             <motion.div
               key={i}
-              initial="hidden"
-              animate="visible"
-              custom={i}
               variants={fadeUp}
               className={inputGroupStyle}
             >
@@ -92,13 +112,7 @@ export default function ContactForm() {
           ))}
 
           {/* Message Field */}
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            custom={3}
-            variants={fadeUp}
-            className={inputGroupStyle}
-          >
+          <motion.div variants={fadeUp} className={inputGroupStyle}>
             <textarea
               name="message"
               rows="5"
@@ -108,29 +122,23 @@ export default function ContactForm() {
               }
               required
               placeholder=" "
-              className={`${inputStyle} resize-none `}
+              className={`${inputStyle} resize-none`}
             />
             <label className={labelStyle}>Your Message</label>
           </motion.div>
 
           {/* Submit Button */}
-          <motion.div
-            className="text-center pt-4"
-            initial="hidden"
-            animate="visible"
-            custom={4}
-            variants={fadeUp}
-          >
+          <motion.div className="text-center pt-4" variants={fadeUp}>
             <motion.button
-              whileHover={{ scale: 1.02 }}
+              whileHover={{ scale: 1.07, boxShadow: "0 0 8px rgb(59 130 246 / 0.8)" }}
               whileTap={{ scale: 0.95 }}
               type="submit"
-              className="bg-blue-600 w-full shadow-black cursor-pointer text-white font-semibold py-3 px-6 rounded-xl shadow hover:bg-blue-700 transition-colors"
+              className="bg-blue-600 w-full cursor-pointer text-white font-semibold py-3 px-6 rounded-xl shadow-lg hover:bg-blue-700 transition-colors"
             >
               Send Message
             </motion.button>
           </motion.div>
-        </form>
+        </motion.form>
       </motion.div>
     </div>
   );

@@ -22,8 +22,8 @@ export default function SectionTitle() {
 
   return (
     <motion.div
-      className="flex items-center justify-center w-screen min-h-screen px-4"
-      style={{ background: `linear-gradient(#004e92 0%,#000428  100%)`}}
+      className="flex items-center justify-center w-screen min-h-screen px-4 overflow-x-hidden"
+      style={{ background: `linear-gradient(#004e92 0%,#000428  100%)` }}
     >
       <motion.div
         initial={{ y: 0 }}
@@ -49,19 +49,18 @@ export default function SectionTitle() {
             transition={{ delay: 0.2, duration: 0.6 }}
             viewport={{ once: true }}
           >
-            Have a technical question, a sales inquiry, or just want to chat? We'd love to hear from you.
+            Have a technical question, a sales inquiry, or just want to chat?
+            We'd love to hear from you.
           </motion.h3>
 
-          {/* Mobile only button */}
-          <motion.div className="w-full pb-4 sm:hidden">
-            <a href="#contactform" aria-label="Jump to Contact Form">
-              <button
-                className="bg-[#004e92] hover:bg-[#005bbb] text-white flex items-center justify-center gap-2 w-full px-4 py-2 text-lg font-semibold rounded-2xl shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500 transition"
-                type="button"
-              >
-                <MessageCircleMoreIcon />
-                <span>Contact Us</span>
-              </button>
+          <motion.div className="w-full flex justify-center pb-4">
+            <a
+              href="#contactform"
+              aria-label="Jump to Contact Form"
+              className="w-[60%] bg-[#004e92] hover:bg-[#005bbb] text-white flex items-center shadow-2xl justify-center gap-2 px-4 py-2 text-lg font-semibold rounded-2xl shadow-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500 transition"
+            >
+              <MessageCircleMoreIcon />
+              <span>Contact Us</span>
             </a>
           </motion.div>
 
